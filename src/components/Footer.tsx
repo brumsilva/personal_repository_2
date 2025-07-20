@@ -56,7 +56,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-border text-center">
           <p className="text-muted-foreground flex items-center justify-center gap-2">
-            © {currentYear} Your Name. Made with{" "}
+            © {currentYear} Bruno Silva. Made with{" "}
             <Heart className="h-4 w-4 text-red-500 animate-pulse" />{" "}
             using React & Tailwind CSS
           </p>
