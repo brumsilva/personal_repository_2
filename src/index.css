@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 27% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 23% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 23% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 27% 8%;
+
+    --secondary: 220 17% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 17% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 17% 17%;
+    --input: 220 17% 17%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom portfolio tokens - Liquid Design */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%), hsl(300 85% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 23% 11%), hsl(220 17% 17%));
+    --gradient-hero: radial-gradient(ellipse at center, hsl(220 27% 8%) 0%, hsl(220 23% 11%) 30%, hsl(217 91% 60% / 0.1) 70%, hsl(220 17% 17%) 100%);
+    --gradient-liquid: linear-gradient(45deg, hsl(217 91% 60% / 0.3), hsl(262 83% 58% / 0.3), hsl(300 85% 55% / 0.3));
+    --gradient-blob: radial-gradient(circle at 30% 40%, hsl(217 91% 60% / 0.4), transparent 50%), radial-gradient(circle at 80% 20%, hsl(262 83% 58% / 0.4), transparent 50%), radial-gradient(circle at 40% 80%, hsl(300 85% 55% / 0.4), transparent 50%);
+    --glow-primary: 0 0 40px hsl(217 91% 60% / 0.3);
+    --glow-accent: 0 0 40px hsl(262 83% 58% / 0.3);
+    --glow-liquid: 0 0 60px hsl(217 91% 60% / 0.2), 0 0 100px hsl(262 83% 58% / 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-liquid: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground scroll-smooth;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .hero-text {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .liquid-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morph 8s ease-in-out infinite;
+  }
+  
+  .liquid-blob {
+    background: var(--gradient-blob);
+    border-radius: 50% 30% 70% 40% / 60% 40% 30% 70%;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .liquid-card {
+    border-radius: 20% 80% 20% 80% / 80% 20% 80% 20%;
+    transition: var(--transition-liquid);
+  }
+  
+  .liquid-card:hover {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform: scale(1.02);
+  }
+  
+  .liquid-button {
+    border-radius: 50px;
+    background: var(--gradient-liquid);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .liquid-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: var(--transition-smooth);
+  }
+  
+  .liquid-button:hover::before {
+    left: 100%;
+  }
+  
+  @keyframes morph {
+    0% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    100% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(180deg);
+    }
+  }
+}
